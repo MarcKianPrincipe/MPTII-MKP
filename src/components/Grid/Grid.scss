@@ -1,0 +1,52 @@
+@import "src/assets/styles/customs/variables.scss";
+
+// $minColWidth: 8.33333333%;
+$minColWidth: 8%;
+
+.container {
+  width: 100%;
+  padding: 24px;
+  max-width: $appMaxWidth;
+  margin: 0 auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding: 12px;
+}
+
+@media (max-width: $mobileMaxWidth) {
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      width: $minColWidth * $i !important;
+      flex: 1 0 auto !important;
+    }
+  }
+
+  .col {
+    padding: 8px;
+  }
+}
+
+@media (min-width: $tabletMinWidth) {
+  @for $i from 1 through 12 {
+    .col-md-#{$i} {
+      width: $minColWidth * $i !important;
+      flex: 0 0 auto !important;
+    }
+  }
+}
+
+@media (min-width: $desktopMinWidth) {
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      width: $minColWidth * $i !important;
+      flex: 0 0 auto !important;
+    }
+  }
+}

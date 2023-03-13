@@ -2,6 +2,7 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Inventory from "./pages/Inventory/Inventory";
+import "./assets/styles/main.scss";
 
 function App() {
   return (

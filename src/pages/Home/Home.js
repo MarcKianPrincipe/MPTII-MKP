@@ -1,6 +1,7 @@
 import React from "react";
 import "./Home.scss";
 import { IMAGES } from "../../constants/images";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
@@ -21,12 +22,12 @@ const Home = () => {
           <h1 className="home__content__title__text">it intern projects</h1>
         </div>
         <div className="home__content__links">
-          <button className="home__content__links__btn-links">
+          <Link to="/inventory" className="home__content__links__btn-links">
             Kian Principe
-          </button>
-          <button className="home__content__links__btn-links">
+          </Link>
+          <Link to="/request" className="home__content__links__btn-links">
             Rogie Delapaz
-          </button>
+          </Link>
         </div>
       </div>
 

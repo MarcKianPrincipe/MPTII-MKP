@@ -16,7 +16,26 @@ const Home = () => {
         <div className="home__header__module-link">Module</div>
       </div>
 
-      <div></div>
+      <div className="home__content">
+        <div className="home__content__title">
+          <h1 className="home__content__title__text">it intern projects</h1>
+        </div>
+        <div className="home__content__links">
+          <button className="home__content__links__btn-links">
+            Kian Principe
+          </button>
+          <button className="home__content__links__btn-links">
+            Rogie Delapaz
+          </button>
+        </div>
+      </div>
+
+      <div className="home__footer">
+        <p className="home__footer__text-footer">
+          Copyright © 2023 Much Prosperity Trading International Inc.. All
+          Rights Reserved.
+        </p>
+      </div>
     </div>
   );
 };

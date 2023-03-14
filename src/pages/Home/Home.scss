@@ -35,6 +35,7 @@ body {
         color: $blueMPT-D;
         text-align: center;
         letter-spacing: 2px;
+        font-family: "Tilt Warp";
       }
     }
 
@@ -50,6 +51,8 @@ body {
         background-color: $blueMPT-L;
         letter-spacing: 2px;
         cursor: pointer;
+        box-shadow: $boxShadowS;
+        font-family: "Tilt Warp";
 
         &:hover {
           background-color: $blueMPT-D;

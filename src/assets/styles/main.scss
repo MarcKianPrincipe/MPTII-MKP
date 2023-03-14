@@ -3,9 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap");
 @import "customs/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 * {
-  font-family: "Tilt Warp";
+  font-family: "Roboto", sans-serif;
   margin: 0;
   padding: 0;
   box-sizing: border-box;

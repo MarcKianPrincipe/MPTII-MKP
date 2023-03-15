@@ -75,6 +75,7 @@ const Inventory = () => {
 
     setEditRow(null);
     setShowSave(false);
+    setIsAdding(false);
   };
 
   const onAdd = () => {
@@ -110,41 +111,64 @@ const Inventory = () => {
       {/* <div className="inventory__inv-header"></div> */}
       <div className="inventory__content">
         <div className="inventory__content__inv-table">
-          <table className="inventory__content__inv-table__table-content">
-            <thead>
-              <tr>
-                {Object.keys(rows[0]).map((key) => (
-                  <th key={key}>
-                    {key.charAt(0).toUpperCase() + key.slice(1)}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody>
-              {rows.map((row, index) => (
-                <tr key={index} onClick={() => onRowClick(index)}>
-                  {Object.values(row).map((value, i) => (
-                    <td key={i}>{value}</td>
+          {rows.length === 0 ? (
+            <p>There are no items to display.</p>
+          ) : (
+            <table className="inventory__content__inv-table__table-content">
+              <thead>
+                <tr>
+                  {Object.keys(rows[0]).map((key) => (
+                    <th key={key}>
+                      {key.charAt(0).toUpperCase() + key.slice(1)}
+                    </th>
                   ))}
-                  <td className="delete-button-cell">
-                    <button
-                      className="btn-delete"
-                      type="button"
-                      onClick={(event) => onDelete(index, event)}
-                    >
-                      Delete
-                    </button>
-                  </td>
                 </tr>
-              ))}
-            </tbody>
-            <button type="button" onClick={tableToCSV}>
-              Download CSV
-            </button>
-          </table>
+              </thead>
+              <tbody>
+                {rows.map((row, index) => (
+                  <tr key={index} onClick={() => onRowClick(index)}>
+                    {Object.values(row).map((value, i) => (
+                      <td key={i}>{value}</td>
+                    ))}
+                    <td className="delete-button-cell">
+                      <button
+                        className="btn-delete"
+                        type="button"
+                        onClick={(event) => onDelete(index, event)}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              <button type="button" onClick={tableToCSV}>
+                Download CSV
+              </button>
+            </table>
+          )}
         </div>
         <div className="inventory__content__inv-inputs">
           <form>
+            {/* <input
+              className="inventory__content__inv-inputs__txt-inputs"
+              type="text"
+              name="laptopNumber"
+              placeholder="Laptop Number"
+              value={newRow.laptopNumber}
+              onChange={handleInputChange}
+              disabled={!isAdding}
+            /> */}
+            {/* <label>Purchase Date</label>
+            <input
+              className="inventory__content__inv-inputs__txt-inputs"
+              type="date"
+              name="purchaseDate"
+              placeholder="Purchase Date"
+              value={newRow.purchaseDate}
+              onChange={handleInputChange}
+              disabled={!isAdding}
+            /> */}
             {Object.keys(newRow).map((key) => (
               <input
                 className="inventory__content__inv-inputs__txt-inputs"
